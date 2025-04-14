@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta para Sarita</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="envelope" onclick="this.classList.toggle('open'); explodeHearts()">
+    <div class="top-flap"></div>
+    <div class="letter">
+      <h1>Para ti, mi querida Sarita 💖</h1>
+      <p>
+        Sarita Marchena,<br><br>
+        Eres una persona muy especial para mí, alguien que ha marcado mi vida de una forma que no esperaba. Desde que comenzamos a trabajar juntos en ese proyecto de estudio, descubrí no solo tu inteligencia y dedicación, sino también tu forma de ser tan única y hermosa. 💫<br><br>
+        Te convertiste en mi mejor amiga, en alguien con quien siempre quiero compartir mis ideas, mis días y mis sueños. Pero debo ser sincero contigo… también me gustas mucho. ❤️<br><br>
+        Cada vez que sonríes, siento que todo vale la pena. Y aunque quizás no sepa cómo decirlo en persona, quiero que sepas que te quiero mucho. Gracias por existir y por ser tú, tan maravillosa como siempre. 🌷<br><br>
+        Con todo mi cariño (y un poquito más),<br>
+        Deivid 💌
+      </p>
+    </div>
+    <div class="roses-left">
+      <img src="rosa1.jpg" alt="rosa">
+    </div>
+    <div class="roses-right">
+        <img src="ramo-flores-surtido.jpg" alt="rosa derecha">
+      </div>
+    
+    <!-- Corazones que aparecerán al abrir -->
+    <div class="hearts">
+      <span style="--x: -150px; --y: -100px; --delay: 1;">❤</span>
+      <span style="--x: 100px; --y: -120px; --delay: 2;">❤</span>
+      <span style="--x: -80px; --y: 150px; --delay: 3;">❤</span>
+      <span style="--x: 120px; --y: 200px; --delay: 4;">❤</span>
+      <span style="--x: -200px; --y: 100px; --delay: 5;">❤</span>
+    </div>
+    
+  </div>
+</body>
+</html>

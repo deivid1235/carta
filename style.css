@@ -1,0 +1,183 @@
+/* 🎨 Fondo general del cuerpo */
+body {
+    background: #fce4ec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ✉️ Sobre principal */
+.envelope {
+    position: relative;
+    width: 80%;
+    max-width: 700px;
+    height: 600px;
+    background: #e91e63;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.6s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* 🔼 Parte superior del sobre */
+.top-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #c2185b;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    transition: transform 0.6s ease;
+    z-index: 2;
+}
+
+/* 📄 Carta interior */
+.letter {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: top 0.6s ease, opacity 0.6s ease;
+    z-index: 1;
+    overflow-y: auto;
+    opacity: 0;
+}
+
+/* 🧾 Título de la carta */
+.letter h1 {
+    margin-top: 0;
+    color: #d81b60;
+    font-size: 34px;
+    font-weight: bold;
+}
+
+/* ✏️ Texto de la carta */
+.letter p {
+    font-size: 20px;
+    color: #6a1b9a;
+    line-height: 1.8;
+    font-weight: bold;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* 🎬 Animación de apertura del sobre */
+.envelope.open .top-flap {
+    transform: rotateX(180deg);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.envelope.open .letter {
+    top: 0;
+    opacity: 1;
+}
+
+/* ❤️ Animación de corazones */
+@keyframes hearts {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(2);
+        opacity: 0;
+    }
+}
+
+.hearts {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 4;
+    font-size: 2rem;
+    gap: 10px;
+    color: red;
+}
+
+.envelope.open .hearts {
+    display: flex;
+}
+
+.hearts span {
+    position: absolute;
+    animation: scatter 1s ease-out forwards;
+}
+
+@keyframes scatter {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+.envelope.open .hearts span {
+    animation: hearts 2s infinite;
+    animation-delay: calc(var(--delay) * 0.2s);
+}
+
+/* 🌹 Imágenes de rosas a los lados (izquierda y derecha) */
+.roses-left, .roses-right {
+    position: absolute;
+    top: 50%; /* Alinea verticalmente al centro */
+    transform: translateY(-50%);
+    z-index: 5;
+}
+
+/* 📍 Imagen izquierda */
+.roses-left {
+    left: -100px; /* Mueve hacia la izquierda */
+}
+
+/* 📍 Imagen derecha */
+.roses-right {
+    right: -100px; /* Mueve hacia la derecha */
+}
+
+/* 🖼️ Estilo para las imágenes */
+.roses-left img, .roses-right img {
+    width: 90px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Imágenes de flores a los lados */
+.roses-left, .roses-right {
+    position: absolute;
+    top: 50%;                      /* Centrado vertical */
+    transform: translateY(-50%);
+    z-index: 5;                    /* Encima del fondo */
+}
+
+/* Imagen izquierda */
+.roses-left {
+    left: 30px;                   /* Puedes ajustar más si deseas separarla más */
+}
+
+/* Imagen derecha */
+.roses-right {
+    right: 30px;                  /* Igual que arriba */
+}
+
+/* Estilo de imagen */
+.roses-left img, .roses-right img {
+    width: 90px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
